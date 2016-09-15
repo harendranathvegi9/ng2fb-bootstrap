@@ -1,0 +1,51 @@
+{
+  "rules": {
+    "profile": {
+      "$uid": {
+        ".read": "auth !== null && auth.uid === $uid",
+        ".write": "auth !== null && auth.uid === $uid",
+        ".indexOn": [
+          "completed"
+        ]
+      }
+    },
+    "content": {
+      ".read": true,
+      ".write": "auth !== null && auth.email === 'asadazmat@gmail.com'"
+    },
+    "widgets": {
+      ".read": true,
+      ".write": "auth !== null && auth.email === 'asadazmat@gmail.com'"
+    },
+    "categories": {
+      ".read": true,
+      ".write": "auth !== null && auth.email === 'asadazmat@gmail.com'"
+    },
+    "products": {
+      ".read": true,
+      ".write": "auth !== null && auth.email === 'asadazmat@gmail.com'"
+    },
+    "items": {
+      ".read": true,
+      ".write": true
+    },
+    "tasks": {
+      "$uid": {
+        ".read": "auth !== null && auth.uid === $uid",
+        ".write": "auth !== null && auth.uid === $uid",
+        ".indexOn": [
+          "completed"
+        ]
+      }
+    },
+    "dogs": {
+      "$uid": {
+        ".read": "auth !== null && auth.uid === $uid",
+        ".write": "auth !== null && auth.uid === $uid",
+        ".indexOn": [
+          "completed"
+        ]
+      }
+    }
+  }
+}

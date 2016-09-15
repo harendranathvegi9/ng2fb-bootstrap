@@ -1,0 +1,21 @@
+<div class="jumbotron">
+    <div class="container">
+        <h2>Angular 2 <span class="">&hearts;</span> Firebase &hearts; Bootstrap 4 &hearts; Webpack</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4" *ngFor="let widget of widgets | async">
+        <h4>
+            {{widget.name}}
+        </h4>
+        <p>
+            {{widget.description}}
+        </p>
+        <p>
+            <a class="btn btn-outline-info" target="_blank" href="{{widget.link}}">More info »</a>
+        </p>
+    </div>
+</div>
+
+<!--<button (click)="put()">Put</button>-->

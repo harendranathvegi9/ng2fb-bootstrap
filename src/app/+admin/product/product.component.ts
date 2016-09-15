@@ -1,0 +1,68 @@
+import { Component, OnInit } from '@angular/core';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { NgbModal, ModalDismissReasons, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+
+import { Category, Product } from '../admin.models';
+
+@Component({
+  selector: 'appc-product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.scss']
+})
+export class ProductComponent implements OnInit {
+  selectedCategoryId: string = '';
+  categories: FirebaseListObservable<Category[]>;
+  products: FirebaseListObservable<Product[]>;
+  currentProduct: any;
+
+  constructor(private af: AngularFire, private modalService: NgbModal) { }
+
+  ngOnInit() {
+    this.categories = this.af.database.list('/categories');
+  }
+
+  delete(product: any) {
+    this.products.remove(product);
+  }
+
+  save(product: Product) {
+    product.dateAdded = firebase.database.ServerValue.TIMESTAMP
+    if (product.$key) {
+      this.products.update(product.$key, {
+        name: product.name,
+        description: product.description,
+        quantity: product.quantity,
+        price: product.price
+      });
+    }
+    else {
+      this.products.push(product);
+    }
+  }
+
+  open(template, product) {
+    this.currentProduct = product ? Object.assign({}, product) : { name: '', description: '', price: '', quantity: '', dateAdded: '' };
+    this.modalService.open(template).result.then((result) => {
+      this.save(result);
+      console.log(`Closed with: ${result}`);
+    }, (reason) => {
+      console.log(`Dismissed ${this.getDismissReason(reason)}`);
+    });
+  }
+
+  onChange() {
+    this.products = this.af.database.list(`/products/${this.selectedCategoryId}`);
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
+
+}
+

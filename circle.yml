@@ -1,0 +1,18 @@
+machine:
+  node:
+    version: 6.3
+
+dependencies:
+  pre:
+    - rm -rf node_modules
+    - npm i -g angular-cli@webpack
+
+test:
+  override:
+    - ng build --prod
+# Travis deploying, so commented
+# deployment:
+#   production:
+#     branch: master
+#     commands:
+#       - ./node_modules/.bin/firebase deploy --token $FIREBASE_TOKEN

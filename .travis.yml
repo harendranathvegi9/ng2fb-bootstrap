@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "6.3"
+install:
+  - npm install -g angular-cli@webpack
+  - npm install  
+script:
+  # - npm test
+  - ng build
+after_success:
+  - ./node_modules/.bin/firebase deploy --token $FIREBASE_TOKEN
+sudo: false
