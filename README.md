@@ -1,4 +1,27 @@
-# Ng2fbBootstrap
+# Ng2fbBootstrap (Single page application developed using).
+ * Angular 2
+ * Angularfire 2
+ * Angular cli (version 1.0.0-beta.11-webpack.8)
+ * ng-bootstrap
+ * Bootstrap 4
+ * Webpack
+
+[![Build Status](https://travis-ci.org/asadsahi/ng2fb-bootstrap.svg?branch=master)](https://travis-ci.org/asadsahi/ng2fb-bootstrap.svg?branch=master)
+[![CircleCI](https://circleci.com/gh/asadsahi/ng2fb-bootstrap.svg?style=svg)](https://circleci.com/gh/asadsahi/ng2fb-bootstrap)
+[![Build status](https://ci.appveyor.com/api/projects/status/8t4f9u6amt517xhn/branch/master?svg=true)](https://ci.appveyor.com/project/asadsahi/ng2fb-bootstrap/branch/master)
+[![Dependency Status](https://david-dm.org/asadsahi/ng2fb-bootstrap.svg)](https://david-dm.org/asadsahi/ng2fb-bootstrap)
+[![devDependencies Status](https://david-dm.org/asadsahi/ng2fb-bootstrap/dev-status.svg)](https://david-dm.org/asadsahi/ng2fb-bootstrap?type=dev)
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+
+## Running the project:
+ * Install node
+ * npm install angular-cli -g
+ * git clone https://github.com/asadsahi/ng2fb-bootstrap
+ * cd ng2fb-bootstrap
+ * npm i
+ * npm start
+ * Navigate: http://localhost:4200
+
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.14.
 

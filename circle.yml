@@ -5,7 +5,7 @@ machine:
 dependencies:
   pre:
     - rm -rf node_modules
-    - npm i -g angular-cli@webpack
+    - npm i -g angular-cli
 
 test:
   override:

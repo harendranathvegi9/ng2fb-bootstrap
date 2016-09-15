@@ -18,7 +18,7 @@ init:
 install:
   - ps: Install-Product node $env:nodejs_version
   - ps: $env:path = $env:appdata + "\npm;" + $env:path
-  - npm install -g angular-cli@webpack
+  - npm install -g angular-cli
   - npm install
 
 test_script:
