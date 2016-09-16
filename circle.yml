@@ -9,7 +9,7 @@ dependencies:
 
 test:
   override:
-    - ng build --prod
+    - npm run build:prod
 # Travis deploying, so commented
 # deployment:
 #   production:

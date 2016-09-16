@@ -29,6 +29,6 @@ test_script:
   # filed against Grunt. https://github.com/joyent/node/issues/3584
 #   - ps: "npm test # PowerShell" # Pass comment to PS for easier debugging
 #   - cmd: npm test
-  - ng build --prod
+  - npm run build:prod
 cache:
   - node_modules -> package.json                                        # local npm modules

@@ -5,8 +5,11 @@ install:
   - npm install -g angular-cli
   - npm install  
 script:
-  # - npm test
-  - ng build
+  #- npm test
+  - npm run build:prod
 after_success:
+  # Deploy to firebase hosting
   - ./node_modules/.bin/firebase deploy --token $FIREBASE_TOKEN
+  # Deploy to github pages
+  - ng github-pages:deploy
 sudo: false

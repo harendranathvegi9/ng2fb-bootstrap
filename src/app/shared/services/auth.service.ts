@@ -15,7 +15,7 @@ export class AuthService {
             this.authState = state;
         });
 
-        this._firebaseAuth = Firebase.apps[0].auth();
+        // this._firebaseAuth = Firebase.apps[0].auth();
     }
 
     get authenticated(): boolean {
