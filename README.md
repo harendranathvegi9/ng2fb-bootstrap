@@ -1,12 +1,12 @@
-# Ng2fbBootstrap (Single page application developed using).
+# Single page application developed using:
  * Angular 2
  * Angularfire 2
  * Angular cli (version 1.0.0-beta.11-webpack.8)
  * ng-bootstrap
  * Bootstrap 4
- * Webpack
+ * Webpack 2
 
-[![Build Status](https://travis-ci.org/asadsahi/ng2fb-bootstrap.svg?branch=master)](https://travis-ci.org/asadsahi/ng2fb-bootstrap.svg?branch=master)
+[![Build Status](https://travis-ci.org/asadsahi/ng2fb-bootstrap.svg?branch=master)](https://travis-ci.org/asadsahi/ng2fb-bootstrap)
 [![CircleCI](https://circleci.com/gh/asadsahi/ng2fb-bootstrap.svg?style=svg)](https://circleci.com/gh/asadsahi/ng2fb-bootstrap)
 [![Build status](https://ci.appveyor.com/api/projects/status/8t4f9u6amt517xhn/branch/master?svg=true)](https://ci.appveyor.com/project/asadsahi/ng2fb-bootstrap/branch/master)
 [![Dependency Status](https://david-dm.org/asadsahi/ng2fb-bootstrap.svg)](https://david-dm.org/asadsahi/ng2fb-bootstrap)
