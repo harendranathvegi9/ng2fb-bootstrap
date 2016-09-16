@@ -10,9 +10,9 @@ dependencies:
 test:
   override:
     - npm run build:prod
-# Travis deploying, so commented
-# deployment:
-#   production:
-#     branch: master
-#     commands:
-#       - ./node_modules/.bin/firebase deploy --token $FIREBASE_TOKEN
+# Github deployment
+deployment:
+  production:
+    branch: master
+    commands:
+        - ng github-pages:deploy

@@ -8,10 +8,6 @@ script:
   #- npm test
   - npm run build:prod
 after_success:
-  # Deploy to firebase hosting
+  # Firebase hosting
   - ./node_modules/.bin/firebase deploy --token $FIREBASE_TOKEN
-deploy:
-  # Deploy to github pages
-  - ng github-pages:deploy
-  
 sudo: false
