@@ -13,4 +13,5 @@ after_success:
 deploy:
   # Deploy to github pages
   - ng github-pages:deploy
+  
 sudo: false
