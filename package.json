@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "2.0.0",
     "@angular/router": "3.0.0",
     "@ng-bootstrap/ng-bootstrap": "1.0.0-alpha.5",
-    "angularfire2": "2.0.0-beta.5-preview",
+    "angularfire2": "2.0.0-beta.5",
     "bootstrap": "4.0.0-alpha.4",
     "core-js": "2.4.1",
     "firebase": "3.4.0",
@@ -33,7 +33,7 @@
     "zone.js": "0.6.23"
   },
   "devDependencies": {
-    "@types/jasmine": "^2.2.30",
+    "@types/jasmine": "^2.2.33",
     "angular-cli": "1.0.0-beta.14",
     "codelyzer": "~0.0.26",
     "firebase-tools": "^3.0.7",
