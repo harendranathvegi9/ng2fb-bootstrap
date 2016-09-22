@@ -26,16 +26,18 @@ export class ProductComponent implements OnInit {
   }
 
   save(product: Product) {
-    product.dateAdded = firebase.database.ServerValue.TIMESTAMP
+    console.log(product.dateAdded);
     if (product.$key) {
       this.products.update(product.$key, {
         name: product.name,
         description: product.description,
         quantity: product.quantity,
-        price: product.price
+        price: product.price,
+        dateAdded: new Date(product.dateAdded.year,product.dateAdded.month, product.dateAdded.day) 
       });
     }
     else {
+      product.dateAdded = firebase.database.ServerValue.TIMESTAMP;
       this.products.push(product);
     }
   }

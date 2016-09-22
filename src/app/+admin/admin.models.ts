@@ -10,7 +10,7 @@ export interface Product {
     $key: string;
     name: string;
     description: string;
-    dateAdded: Date;
+    dateAdded: any; // like {year, month, day}
     price: number;
     quantity: number;
 }
