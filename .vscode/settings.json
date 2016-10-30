@@ -17,4 +17,6 @@
         ".idea": true,
         "npm-debug.log.*": true
     }
+,
+"typescript.tsdk": "./node_modules/typescript/lib"
 }
