@@ -2,7 +2,7 @@
 import { AuthProviders, FirebaseAuth, FirebaseAuthState, AuthMethods } from 'angularfire2';
 import * as Firebase from 'firebase';
 
-import { AuthModel } from '../models';
+import { AuthModel } from '../models/auth.model';
 
 
 @Injectable()

@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 
 import { ProfileService } from '../profile.service';
 import { ChangePasswordModel } from './change-password.model';
-import { PageHeadingComponent } from '../../shared/directives';
+import { PageHeadingComponent } from '../../shared/directives/page-heading';
 import { ValidationService } from '../../shared/forms';
 
 @Component({
@@ -16,7 +16,7 @@ export class ChangePasswordComponent {
     @Output() notification = new EventEmitter<string>();
 
     constructor(public profileService: ProfileService, private fb: FormBuilder) {
-             this.changePasswordForm = this.fb.group({
+        this.changePasswordForm = this.fb.group({
             'oldPassword': ['', Validators.compose([Validators.required, ValidationService.passwordValidator])],
             'newPassword': ['', Validators.compose([Validators.required, ValidationService.passwordValidator])],
             'confirmPassword': ['', Validators.compose([Validators.required, ValidationService.passwordValidator])]
@@ -29,13 +29,13 @@ export class ChangePasswordComponent {
             this.changePasswordModel.newPassword = this.changePasswordForm.value.newPassword;
             this.changePasswordModel.confirmPassword = this.changePasswordForm.value.confirmPassword;
             this.profileService.changePassword(this.changePasswordModel);
-                // .subscribe((res: any) => {
-                //     this.notification.emit(`Password changed successfully`);
-                // },
-                // (errors: any) => {
-                //     this.notification.emit(errors[0]);
-                //     this.changePasswordModel = new ChangePasswordModel('', '', '');
-                // });
+            // .subscribe((res: any) => {
+            //     this.notification.emit(`Password changed successfully`);
+            // },
+            // (errors: any) => {
+            //     this.notification.emit(errors[0]);
+            //     this.changePasswordModel = new ChangePasswordModel('', '', '');
+            // });
 
         }
     }

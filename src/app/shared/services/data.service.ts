@@ -7,11 +7,11 @@ export class DataService {
 
     constructor(public http: ApiGatewayService) { }
 
-    get(url: string, params?: any) {
+    public get(url: string, params?: any): any {
         return this.http.get(url, undefined);
     }
 
-    post(url: string, data: any, params?: any) {
+    public post(url: string, data: any, params?: any): any {
         return this.http.post(url, data, params);
     }
 }

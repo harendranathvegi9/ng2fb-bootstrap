@@ -5,7 +5,7 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { CategoryComponent } from './category/category.component';
 import { ProductComponent } from './product/product.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '', component: AdminComponent, children: [
       { path: 'home', component: AdminHomeComponent },
@@ -15,4 +15,3 @@ const routes: Routes = [
   }
 ];
 
-export const routing = RouterModule.forChild(routes);

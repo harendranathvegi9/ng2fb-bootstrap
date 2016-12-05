@@ -1,13 +1,14 @@
-import { NgModule }       from '@angular/core';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
-import { SharedModule }            from '../shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './home.component';
-import { routing }            from './home.routes';
-import { WidgetService } from './widget';
+import { routes } from './home.routes';
+import { WidgetService } from './widget/widget.service';
 
 
 @NgModule({
-    imports: [routing, SharedModule],
+    imports: [RouterModule.forChild(routes), SharedModule],
     providers: [WidgetService],
     declarations: [HomeComponent]
 })

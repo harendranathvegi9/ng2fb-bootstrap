@@ -9,7 +9,7 @@ export class AdminService {
 
     constructor(private dataService: DataService) { }
 
-    do() {
+    public do(): any {
         return this.dataService.get(this.adminApiUrl);
     }
 

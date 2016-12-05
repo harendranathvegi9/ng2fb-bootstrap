@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { WidgetService } from './widget';
+import { WidgetService } from './widget/widget.service';
 
 @Component({
   selector: 'appc-home',

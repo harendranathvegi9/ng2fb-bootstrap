@@ -3,13 +3,38 @@ import { NgModule, NgModuleFactoryLoader } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule, AuthMethods } from 'angularfire2';
+import { Routes, RouterModule } from '@angular/router';
 
-import { routing } from './app.routes';
+// import { routing } from './app.routes';
 import { AppService } from './app.service';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { AppComponent } from './app.component';
-import { PageNotFoundComponent } from './shared/components/page-not-found';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+
+export const routes: any = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    // Lazy async modules
+    {
+        path: 'login', loadChildren: './+login/login.module#LoginModule'
+    },
+    {
+        path: 'register', loadChildren: './+register/register.module#RegisterModule'
+    },
+    {
+        path: 'profile', loadChildren: './+profile/profile.module#ProfileModule'
+    },
+    {
+        path: 'admin', loadChildren: './+admin/admin.module#AdminModule'
+    },
+    {
+        path: 'about', loadChildren: './+about/about.module#AboutModule'
+    },
+    {
+        path: 'examples', loadChildren: './+examples/examples.module#ExamplesModule'
+    },
+    { path: '**', component: PageNotFoundComponent }
+];
 
 // Must export the config
 export const firebaseConfig = {
@@ -30,7 +55,7 @@ export const firebaseAuthConfig = {
         BrowserModule,
         CommonModule,
         AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
-        routing,
+        RouterModule.forRoot(routes),
         // Only module that app module loads
         SharedModule.forRoot(),
         HomeModule
@@ -45,3 +70,5 @@ export const firebaseAuthConfig = {
     bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

@@ -2,8 +2,8 @@
 import { FirebaseObjectObservable, AngularFire } from 'angularfire2';
 
 import { AuthService } from '../shared/services/auth.service';
-import { ChangeNameModel } from './changename';
-import { ChangePasswordModel } from './changepassword';
+import { ChangeNameModel } from './changename/change-name.model';
+import { ChangePasswordModel } from './changepassword/change-password.model';
 
 @Injectable()
 export class ProfileService {

@@ -7,7 +7,7 @@ import { TranslateService } from 'ng2-translate/ng2-translate';
   selector: 'appc-root',
   styleUrls: ['./app.component.scss'],
   templateUrl: './app.component.html',
-  encapsulation: ViewEncapsulation.None
+  // encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
 
