@@ -1,6 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
-import { AuthProviders, FirebaseAuth, FirebaseAuthState, AuthMethods } from 'angularfire2';
-import * as Firebase from 'firebase';
+import { AuthProviders, AngularFire, FirebaseAuthState, AuthMethods } from 'angularfire2';
+// import * as Firebase from 'firebase';
 
 import { AuthModel } from '../models/auth.model';
 
@@ -10,8 +10,8 @@ export class AuthService {
     private authState: FirebaseAuthState = null;
     private _firebaseAuth: firebase.auth.Auth;
 
-    constructor(public auth$: FirebaseAuth) {
-        auth$.subscribe((state: FirebaseAuthState) => {
+    constructor(public auth$: AngularFire) {
+        auth$.auth.subscribe((state: FirebaseAuthState) => {
             this.authState = state;
         });
 
@@ -31,12 +31,12 @@ export class AuthService {
     }
 
     createUser(model: AuthModel): firebase.Promise<FirebaseAuthState> {
-        return this.auth$.createUser({ email: model.email, password: model.password })
+        return this.auth$.auth.createUser({ email: model.email, password: model.password })
             .catch(error => console.log('ERROR @ AuthService#createUser() :', error));;
     }
 
     signIn(provider: number): firebase.Promise<FirebaseAuthState> {
-        return this.auth$.login({ provider })
+        return this.auth$.auth.login({ provider })
             .catch(error => console.log('ERROR @ AuthService#signIn() :', error));
     }
 
@@ -57,7 +57,7 @@ export class AuthService {
     }
 
     signInWithPassword(loginModel: any): firebase.Promise<FirebaseAuthState> {
-        return this.auth$.login(loginModel, {
+        return this.auth$.auth.login(loginModel, {
             provider: AuthProviders.Password, method: AuthMethods.Password
         });
     }
@@ -90,6 +90,6 @@ export class AuthService {
     //   });
     // }
     signOut(): void {
-        this.auth$.logout();
+        this.auth$.auth.logout();
     }
 }

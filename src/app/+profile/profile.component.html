@@ -1,9 +1,13 @@
 <!--Alert message-->
 <div class="row">
-    <div class="alert alert-success" *ngIf="notificationMessage">
-        <button aria-hidden="true" data-dismiss="alert" class="close" type="button" (click)="notificationMessage = ''">&times;</button>        {{notificationMessage}}
-    </div>
-    <appc-change-name (notification)="notify($event)"></appc-change-name>
+    <ngb-alert *ngIf="notificationMessage" type="success" (close)="notificationMessage = null">{{ notificationMessage }}</ngb-alert>
+</div>
 
-    <appc-change-password (notification)="notify($event)"></appc-change-password>
+<div class="row">
+    <div class="col">
+        <appc-change-name (notification)="notify($event)"></appc-change-name>
+    </div>
+    <div class="col">
+        <appc-change-password (notification)="notify($event)"></appc-change-password>
+    </div>
 </div>
